@@ -36,11 +36,13 @@ var rick_roll = function() {
 
 var red_background = function() {
 	document.body.style.backgroundColor = "red";
+	document.getElementById("message").style.color = "white";
 	setTimeout(white_background, 200);
 }
 
 var white_background = function() {
 	document.body.style.backgroundColor = "white";
+	document.getElementById("message").style.color = "black";
 	setTimeout(red_background, 200);
 }
 
