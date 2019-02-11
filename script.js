@@ -15,6 +15,12 @@ var secs_to_str = function(secs) {
 var update_timer = function(secs) {
 	var time = secs_to_str(secs);
 	document.getElementById("timer").innerText = time;
+	if (secs <= 10) {
+		beep(secs);
+	}
+}
+
+var beep = function(secs) {
 	if (secs > 3) {
 		// beep sound
 		document.getElementById("beep").play();
