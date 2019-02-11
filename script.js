@@ -32,7 +32,7 @@ var white_background = function() {
 }
 
 var on_load = function() {
-	var t = 60;
+	var t = 10;
 	for(var i = 0; i < t - 3; i++){
 		setTimeout(update_timer, 1000 * i, t - i);
 	}
