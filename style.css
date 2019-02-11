@@ -1,0 +1,21 @@
+#logo {
+	height: 50%;
+}
+* {
+	text-align: center;
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+}
+#message {
+	font-size: 200%;
+}
+#timer {
+	display: inline-block;
+	font-size: 1000%;
+	border: 4px solid #FF0000;
+	background-color: #FFAAAA;
+	width: auto;
+	font-family: monospace;
+	font-weight: 900;
+}
