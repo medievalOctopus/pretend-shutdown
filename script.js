@@ -15,6 +15,13 @@ var secs_to_str = function(secs) {
 var update_timer = function(secs) {
 	var time = secs_to_str(secs);
 	document.getElementById("timer").innerText = time;
+	if (secs > 3) {
+		// beep sound
+		document.getElementById("beep").play();
+	} else {
+		// high pitched beep sound
+		document.getElementById("highbeep").play();
+	}
 }
 
 var rick_roll = function() {
