@@ -24,9 +24,11 @@ var beep = function(secs) {
 	if (secs > 3) {
 		// beep sound
 		document.getElementById("beep").play();
+		console.log("lowbeep");
 	} else {
 		// high pitched beep sound
 		document.getElementById("highbeep").play();
+		console.log("highbeep");
 	}
 }
 
@@ -46,7 +48,7 @@ var white_background = function() {
 	setTimeout(red_background, 200);
 }
 
-var on_load = function() {
+var ready = function() {
 	var t = 30;
 	update_timer(t);
 	for(var i = 0; i < t - 3; i++){
@@ -59,4 +61,23 @@ var on_load = function() {
 	setTimeout(rick_roll, t * 1000);
 }
 
-window.addEventListener('load', on_load, false);
+var beep1_ready = false;
+var beep2_ready = false;
+
+var beep1 = function() {
+	if(!beep1_ready){
+		beep1_ready = true;
+		if(beep1_ready && beep2_ready) {
+			ready();
+		}
+	}
+}
+
+var beep2 = function() {
+	if(!beep2_ready){
+		beep2_ready = true;
+		if(beep1_ready && beep2_ready) {
+			ready();
+		}
+	}
+}
