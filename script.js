@@ -15,20 +15,17 @@ var secs_to_str = function(secs) {
 var update_timer = function(secs) {
 	var time = secs_to_str(secs);
 	document.getElementById("timer").innerText = time;
-	if (secs <= 10) {
-		beep(secs);
-	}
-};
-
-var beep = function(secs) {
-	if (secs > 3) {
-		// beep sound
-		document.getElementById("beep").play();
-		console.log("lowbeep");
-	} else {
-		// high pitched beep sound
-		document.getElementById("highbeep").play();
-		console.log("highbeep");
+	if (secs == 25) {
+		txt = document.getElementById("message").innerHTML;
+		document.getElementById("message").innerHTML = "<marquee truespeed scrolldelay=30>" + txt + "</marquee>";
+	} else if (secs == 20) {
+		setInterval(exclaim, 450);
+	} else if (secs == 15) {
+		document.getElementById("timer").classList.add("spinner");
+	} else if (secs == 10) {
+		setInterval(flash_timer, 300);
+	} else if (secs == 5) {
+		setInterval(flash_logo, 100);
 	}
 };
 
@@ -46,6 +43,18 @@ var white_background = function() {
 	document.body.style.backgroundColor = "white";
 	document.getElementById("message").style.color = "black";
 	setTimeout(red_background, 200);
+};
+
+var flash_timer = function() {
+	document.getElementById("timer").classList.toggle("timer2");
+};
+
+var flash_logo = function() {
+	document.getElementById("logo").classList.toggle("logo2");
+};
+
+var exclaim = function() {
+	document.getElementById("exclaim").innerText += "!";
 };
 
 var ready = function() {
