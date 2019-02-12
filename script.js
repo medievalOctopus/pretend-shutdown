@@ -18,7 +18,7 @@ var update_timer = function(secs) {
 	if (secs <= 10) {
 		beep(secs);
 	}
-}
+};
 
 var beep = function(secs) {
 	if (secs > 3) {
@@ -30,23 +30,23 @@ var beep = function(secs) {
 		document.getElementById("highbeep").play();
 		console.log("highbeep");
 	}
-}
+};
 
 var rick_roll = function() {
 	document.location = "https://www.youtube.com/watch?v=oHg5SJYRHA0";
-}
+};
 
 var red_background = function() {
 	document.body.style.backgroundColor = "red";
 	document.getElementById("message").style.color = "white";
 	setTimeout(white_background, 200);
-}
+};
 
 var white_background = function() {
 	document.body.style.backgroundColor = "white";
 	document.getElementById("message").style.color = "black";
 	setTimeout(red_background, 200);
-}
+};
 
 var ready = function() {
 	var t = 30;
@@ -59,25 +59,6 @@ var ready = function() {
 		setTimeout(update_timer, 1000 * (t - i), i);
 	}
 	setTimeout(rick_roll, t * 1000);
-}
+};
 
-var beep1_ready = false;
-var beep2_ready = false;
-
-var beep1 = function() {
-	if(!beep1_ready){
-		beep1_ready = true;
-		if(beep1_ready && beep2_ready) {
-			ready();
-		}
-	}
-}
-
-var beep2 = function() {
-	if(!beep2_ready){
-		beep2_ready = true;
-		if(beep1_ready && beep2_ready) {
-			ready();
-		}
-	}
-}
+window.onload = ready;
