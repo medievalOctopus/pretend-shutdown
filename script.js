@@ -12,10 +12,19 @@ var secs_to_str = function(secs) {
 	return before + ":" + after;
 };
 
+var play_alarms = function(){
+	var media = document.getElementById("alarms");
+	const playPromise = media.play();
+	if (playPromise !== null){
+		playPromise.catch(() => { media.play(); })
+	}
+};
+
 var update_timer = function(secs) {
 	var time = secs_to_str(secs);
 	document.getElementById("timer").innerText = time;
 	if (secs == 25) {
+		play_alarms();
 		txt = document.getElementById("message").innerHTML;
 		document.getElementById("message").innerHTML = "<marquee truespeed scrolldelay=30>" + txt + "</marquee>";
 	} else if (secs == 20) {
