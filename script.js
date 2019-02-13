@@ -28,7 +28,7 @@ var update_timer = function(secs) {
 		txt = document.getElementById("message").innerHTML;
 		document.getElementById("message").innerHTML = "<marquee truespeed scrolldelay=30>" + txt + "</marquee>";
 	} else if (secs == 20) {
-		setInterval(exclaim, 450);
+		setInterval(exclaim, 150);
 	} else if (secs == 15) {
 		document.getElementById("timer").classList.add("spinner");
 	} else if (secs == 10) {
@@ -63,7 +63,7 @@ var flash_logo = function() {
 };
 
 var exclaim = function() {
-	document.getElementById("exclaim").innerText += "!";
+	document.getElementById("exclaim").innerText += "\u200b!";
 };
 
 var ready = function() {
